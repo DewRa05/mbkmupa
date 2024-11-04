@@ -34,7 +34,7 @@
                                 <!-- Nama Pelatihan -->
                                 <div class="mb-3">
                                     <label for="nama" class="form-label">Nama Pelatihan</label>
-                                    <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukan Nama Pelatihan" >
+                                    <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukan Nama Pelatihan" value="{{ old('nama') }}">
                                     @error('nama')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -43,7 +43,7 @@
                                 <!-- Jenis Pelatihan -->
                                 <div class="mb-3">
                                     <label for="jenis_pelatihan" class="form-label">Jenis Pelatihan</label>
-                                    <input type="text" class="form-control" name="jenis_pelatihan" id="jenis_pelatihan" placeholder="Masukan Jenis Pelatihan">
+                                    <input type="text" class="form-control" name="jenis_pelatihan" id="jenis_pelatihan" placeholder="Masukan Jenis Pelatihan" value="{{ old('jenis_pelatihan') }}">
                                     @error('jenis_pelatihan')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -52,7 +52,7 @@
                                 <!-- Deskripsi -->
                                 <div class="mb-3">
                                     <label for="deskripsi" class="form-label">Deskripsi</label>
-                                    <textarea class="form-control" name="deskripsi" id="deskripsi" placeholder="Masukan Deskripsi"></textarea>
+                                    <textarea class="form-control" name="deskripsi" id="deskripsi" placeholder="Masukan Deskripsi">{{ old('deskripsi') }}</textarea>
                                     @error('deskripsi')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -61,7 +61,7 @@
                                 <!-- Tanggal Pendaftaran -->
                                 <div class="mb-3">
                                     <label for="tanggal_pendaftaran" class="form-label">Mulai Pendaftaran</label>
-                                    <input type="date" class="form-control" name="tanggal_pendaftaran" id="tanggal_pendaftaran">
+                                    <input type="date" class="form-control" name="tanggal_pendaftaran" id="tanggal_pendaftaran" value="{{ old('tanggal_pendaftaran') }}">
                                     @error('tanggal_pendaftaran')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -70,7 +70,7 @@
                                 <!-- Berakhir Pendaftaran -->
                                 <div class="mb-3">
                                     <label for="berakhir_pendaftaran" class="form-label">Berakhir Pendaftaran</label>
-                                    <input type="date" class="form-control" name="berakhir_pendaftaran" id="berakhir_pendaftaran">
+                                    <input type="date" class="form-control" name="berakhir_pendaftaran" id="berakhir_pendaftaran" value="{{ old('berakhir_pendaftaran') }}">
                                     @error('berakhir_pendaftaran')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -79,7 +79,7 @@
                                 <!-- Harga -->
                                 <div class="mb-3">
                                     <label for="harga" class="form-label">Harga</label>
-                                    <input type="number" class="form-control" name="harga" id="harga" placeholder="Masukan Harga Pelatihan">
+                                    <input type="number" class="form-control" name="harga" id="harga" placeholder="Masukan Harga Pelatihan" value="{{ old('harga') }}">
                                     @error('harga')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -88,7 +88,7 @@
                                 <!-- Kuota -->
                                 <div class="mb-3">
                                     <label for="kuota" class="form-label">Kuota</label>
-                                    <input type="number" class="form-control" name="kuota" id="kuota" placeholder="Masukan Kuota Peserta">
+                                    <input type="number" class="form-control" name="kuota" id="kuota" placeholder="Masukan Kuota Peserta" value="{{ old('kuota') }}">
                                     @error('kuota')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -100,7 +100,7 @@
                                     <select class="form-select" name="lsp_id" id="lsp">
                                         <option value="">Pilih LSP</option>
                                         @foreach ($lsps as $lsp)
-                                            <option value="{{ $lsp->id }}">{{ $lsp->nama }}</option>
+                                            <option value="{{ $lsp->id }}" {{ old('lsp_id') }}>{{ $lsp->nama }}</option>
                                         @endforeach
                                     </select>
                                     @error('lsp_id')
@@ -114,7 +114,7 @@
                                     <select class="form-select" name="kategori_id" id="kategori">
                                         <option value="">Pilih Kategori</option>
                                         @foreach ($kategoris as $kategori)
-                                            <option value="{{ $kategori->id }}">{{ $kategori->nama }}</option>
+                                            <option value="{{ $kategori->id }}" {{ old('kategori_id') }}>{{ $kategori->nama }}</option>
                                         @endforeach
                                     </select>
                                     @error('kategori_id')
